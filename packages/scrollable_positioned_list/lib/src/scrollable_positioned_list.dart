@@ -260,6 +260,23 @@ class ItemScrollController {
     );
   }
 
+  void scrollToTop({
+    required Curve curve,
+    required Duration duration,
+  }) {
+    scrollTo(index: 0, duration: duration, curve: curve);
+  }
+
+  void scrollToBottom({
+    required Curve curve,
+    required Duration duration,
+  }) {
+    scrollTo(
+        index: _scrollableListState!.widget.itemCount - 1,
+        duration: duration,
+        curve: curve);
+  }
+
   void _attach(_ScrollablePositionedListState scrollableListState) {
     assert(_scrollableListState == null);
     _scrollableListState = scrollableListState;
